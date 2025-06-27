@@ -2,26 +2,28 @@ package com.kava.api_lista_tarefas.model;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
+
 @Entity
 public class Tarefa {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     @Column(nullable = false)
     private String titulo;
     @Column(nullable = false)
     private String descricao;
     @Column(nullable = false)
-    private String dataCriacao;
+    private LocalDateTime dataCriacao;
     @Column(nullable = false)
     private boolean concluida;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -41,11 +43,11 @@ public class Tarefa {
         this.descricao = descricao;
     }
 
-    public String getDataCriacao() {
+    public LocalDateTime getDataCriacao() {
         return dataCriacao;
     }
 
-    public void setDataCriacao(String dataCriacao) {
+    public void setDataCriacao(LocalDateTime dataCriacao) {
         this.dataCriacao = dataCriacao;
     }
 
